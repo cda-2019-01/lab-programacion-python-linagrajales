@@ -16,3 +16,27 @@
 ##    ('9', ['A', 'B', 'E', 'C'])
 ##
 ##
+import numpy as np
+from collections import Counter
+file = open('data.csv', 'r')
+
+col0=[]; col1=[]; col2=[]; col3=[]; col4=[]; 
+
+for line in file:    
+    data = line.strip().split("\t")            
+    col0.append(data[0]); 
+    col1.append(float(data[1])); 
+    col2.append(data[2]); 
+    col3.append(data[3]); 
+    col4.append(data[4])    
+    
+for i in range(0,10):
+    letters = [];
+    
+    for j, val in enumerate(col1):
+        
+        if(i==val):
+            letters.append(col0[j])
+            
+    result = (i,letters)
+    print(result)
